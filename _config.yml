@@ -18,16 +18,19 @@ minimal_mistakes_skin    : "air" #, "default", "aqua", "contrast", "dark", "dirt
 locale                   : "en-GB"
 title                    : "My First Website"
 title_separator          : "-"
+subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Liam Kelly"
 description              : "An amazing website."
 url                      : "https://lkellyuk2.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "lkellyuk2/lkellyuk2.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
+  provider               : "facebook" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -37,6 +40,9 @@ comments:
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
   branch                 : # "master"
@@ -103,15 +109,15 @@ analytics:
 author:
   name             : "Liam Kelly"
   avatar           : "/assets/images/myAvatar.png"
-  bio              : "Stuff about me..."
+  bio              : "Optimising the most valuable commodity... time."
   location         : "Nottingham, UK"
   email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:lkellyuk2@gmail.com"
+      # url: "mailto:lkellyuk2@gmail.com"
     - label: "LinkedIn"
-      icon: "fab fa-linkedin"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/liamkelly89/"
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -228,7 +234,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
@@ -237,7 +242,7 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
+  - jekyll-include-cache
 
 
 # Archives
@@ -287,8 +292,15 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true      
 
 
